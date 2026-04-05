@@ -45,11 +45,13 @@ next-env.d.ts
 /docs/
 
 # Agentes de IA e regras locais (Cursor, Claude Code, Copilot, GSD)
+AGENTS.md
+CLAUDE.md
+
 /.claude/
 /.cursor/
 /.github/agents/
+/.github/skills/
 /.github/get-shit-done/
 /.github/copilot-instructions.md
 /.github/gsd-file-manifest.json
-AGENTS.md
-CLAUDE.md
