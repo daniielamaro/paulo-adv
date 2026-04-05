@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +40,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Documentação local (não enviar ao remoto)
+/docs/
+
+# Agentes de IA e regras locais (Cursor, Claude Code, Copilot, GSD)
+/.claude/
+/.cursor/
+/.github/agents/
+/.github/get-shit-done/
+/.github/copilot-instructions.md
+/.github/gsd-file-manifest.json
+AGENTS.md
+CLAUDE.md
