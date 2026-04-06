@@ -2,11 +2,12 @@ import Link from "next/link";
 import { site } from "@/lib/site-content";
 
 const nav = [
-  { href: "#inicio", label: "Início" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#areas", label: "Áreas" },
-  { href: "#escritorio", label: "Escritório" },
-  { href: "#contato", label: "Contato" },
+  { href: "/#inicio", label: "Início" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#areas", label: "Áreas" },
+  { href: "/#escritorio", label: "Escritório" },
+  { href: "/artigos", label: "Artigos" },
+  { href: "/#contato", label: "Contato" },
 ] as const;
 
 export function SiteHeader() {
@@ -33,15 +34,25 @@ export function SiteHeader() {
           className="-mx-4 flex gap-1 overflow-x-auto border-t border-[var(--color-border)]/60 px-4 py-2 md:mx-0 md:border-0 md:py-0 md:pb-3"
           aria-label="Principal"
         >
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="shrink-0 rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink-muted)] transition-colors hover:bg-[var(--color-muted)] hover:text-[var(--color-ink)]"
-            >
-              {item.label}
-            </a>
-          ))}
+          {nav.map((item) =>
+            item.href.startsWith("/#") ? (
+              <a
+                key={item.href}
+                href={item.href}
+                className="shrink-0 rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink-muted)] transition-colors hover:bg-[var(--color-muted)] hover:text-[var(--color-ink)]"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="shrink-0 rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink-muted)] transition-colors hover:bg-[var(--color-muted)] hover:text-[var(--color-ink)]"
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </nav>
       </div>
     </header>

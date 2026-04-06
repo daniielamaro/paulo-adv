@@ -31,8 +31,8 @@ export function SiteFooter() {
             <p className="font-medium text-white">Links</p>
             <ul className="mt-3 space-y-2 text-white/75">
               <li>
-                <Link href="/blog" className="hover:text-white">
-                  Blog
+                <Link href="/artigos" className="hover:text-white">
+                  Artigos
                 </Link>
               </li>
               <li>

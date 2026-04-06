@@ -4,8 +4,7 @@ export const site = {
   name: "Paulo Advogados",
   shortName: "Paulo Adv",
   tagline: "Advocacia estratégica com ética, proximidade e resultados.",
-  description:
-    "Escritório de advocacia dedicado à defesa dos seus direitos com atendimento humanizado e técnica jurídica sólida.",
+  description: "Escritório de advocacia dedicado à defesa dos seus direitos com atendimento humanizado e técnica jurídica sólida.",
   phoneDisplay: "(21) 99999-9999",
   phoneTel: "+5521999999999",
   whatsappE164: "5521999999999",

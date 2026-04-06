@@ -50,3 +50,78 @@ body {
   clip: auto;
   white-space: normal;
 }
+
+/* Conteúdo Markdown dos artigos */
+.article-md h1 {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.article-md h2 {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-md h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-md p {
+  line-height: 1.7;
+}
+
+.article-md ul,
+.article-md ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  line-height: 1.65;
+}
+
+.article-md a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-md a:hover {
+  filter: brightness(0.95);
+}
+
+.article-md blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-accent);
+  color: var(--color-ink-muted);
+}
+
+.article-md code {
+  font-size: 0.9em;
+  background: var(--color-muted);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+}
+
+.article-md pre {
+  margin: 1rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background: var(--color-ink);
+  color: var(--color-surface);
+  font-size: 0.875rem;
+}
+
+.article-md pre code {
+  background: transparent;
+  padding: 0;
+}

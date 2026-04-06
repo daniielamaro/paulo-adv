@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { WhatsAppFloat } from "@/components/home/whatsapp-float";
+import { Providers } from "@/app/providers";
 import { site } from "@/lib/site-content";
 
 const serif = Source_Serif_4({
@@ -40,10 +41,12 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${serif.variable} ${sans.variable} h-full scroll-smooth antialiased`}>
       <body className="min-h-full flex flex-col bg-[var(--color-canvas)] font-sans text-[var(--color-ink)]">
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
-        <WhatsAppFloat />
+        <Providers>
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+          <WhatsAppFloat />
+        </Providers>
       </body>
     </html>
   );
