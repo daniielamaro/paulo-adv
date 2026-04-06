@@ -1,35 +1,36 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { site } from "@/lib/site-content";
 
 /**
- * Logotipo em `public/logo.png` (ou caminho em `site.logoSrc`).
- * Se o ficheiro não existir ou falhar a carga, mostra o nome abreviado do escritório.
+ * Logotipo em `public/images/logo.png` (URL pública `/images/logo.png`).
+ * Usa `<img>` nativo para evitar falhas do `next/image` com alguns ficheiros PNG.
  */
 export function SiteLogo() {
-  const [useFallback, setUseFallback] = useState(false);
+  const [broken, setBroken] = useState(false);
 
-  if (useFallback) {
+  if (broken) {
     return (
-      <span className="font-serif text-lg font-semibold tracking-tight text-[var(--color-ink)] sm:text-xl">
+      <span className="font-serif text-2xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-3xl">
         {site.shortName}
       </span>
     );
   }
 
   return (
-    <span className="inline-flex h-9 min-h-9 items-center sm:h-10 sm:min-h-10">
-      <Image
+    <span className="inline-flex min-h-[3.25rem] items-center sm:min-h-[4rem] md:min-h-[4.75rem] lg:min-h-[5.25rem]">
+      {/* eslint-disable-next-line @next/next/no-img-element -- PNG local; next/image falhava e activava fallback */}
+      <img
+        key={site.logoSrc}
         src={site.logoSrc}
         alt=""
-        width={220}
-        height={56}
-        className="max-h-9 w-auto max-w-[min(220px,55vw)] object-contain object-left sm:max-h-10"
-        priority
-        unoptimized
-        onError={() => setUseFallback(true)}
+        width={480}
+        height={120}
+        className="h-[3.25rem] w-auto max-w-[min(92vw,420px)] object-contain object-left sm:h-16 sm:max-w-[min(90vw,480px)] md:h-[4.75rem] md:max-w-[min(85vw,520px)] lg:h-[5.25rem] lg:max-w-[560px]"
+        fetchPriority="high"
+        decoding="async"
+        onError={() => setBroken(true)}
       />
     </span>
   );

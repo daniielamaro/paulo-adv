@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site-content";
 import { ContactForm } from "@/components/home/contact-form";
-import { MapEmbed } from "@/components/home/map-embed";
 
 export function ContactSection() {
   return (
@@ -12,7 +11,7 @@ export function ContactSection() {
             Contato
           </p>
           <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-4xl">
-            Fale com o escritório
+            Fale connosco
           </h2>
           <p className="mt-4 text-lg text-[var(--color-ink-muted)]">
             Envie uma mensagem ou fale conosco por telefone e WhatsApp. Retornamos o mais breve possível.
@@ -24,8 +23,8 @@ export function ContactSection() {
               <h3 className="font-serif text-lg font-semibold text-[var(--color-ink)]">Dados</h3>
               <ul className="mt-4 space-y-3 text-[var(--color-ink-muted)]">
                 <li>
-                  <span className="font-medium text-[var(--color-ink)]">Endereço: </span>
-                  {site.address.full}
+                  <span className="font-medium text-[var(--color-ink)]">Modalidade: </span>
+                  {site.serviceAreaLine}
                 </li>
                 <li>
                   <span className="font-medium text-[var(--color-ink)]">Telefone: </span>
@@ -46,12 +45,11 @@ export function ContactSection() {
                     rel="noopener noreferrer"
                     className="inline-flex font-medium text-[#128C7E] hover:underline"
                   >
-                    Falar com o advogado
+                    WhatsApp
                   </Link>
                 </li>
               </ul>
             </div>
-            <MapEmbed />
           </div>
           <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 shadow-sm sm:p-8">
             <h3 className="font-serif text-lg font-semibold text-[var(--color-ink)]">Formulário</h3>

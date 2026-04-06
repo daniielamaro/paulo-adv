@@ -24,7 +24,7 @@ export function SiteFooter() {
                   {site.email}
                 </a>
               </li>
-              <li className="pt-1">{site.address.full}</li>
+              <li className="pt-1 text-white/80">{site.serviceAreaLine}</li>
             </ul>
           </div>
           <div className="text-sm">

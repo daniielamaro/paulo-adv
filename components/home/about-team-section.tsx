@@ -34,11 +34,13 @@ export function AboutTeamSection() {
                     fill
                     className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
                     sizes="(max-width: 640px) 260px, (max-width: 1024px) 224px, 256px"
-                    priority
+                    priority={index === 0}
+                    unoptimized
                   />
                 </div>
                 <div className="w-full min-w-0 flex-1 text-center sm:text-left">
                   <h3 className="font-serif text-2xl font-semibold text-[var(--color-ink)]">{member.name}</h3>
+                  <p className="mt-2 text-sm font-semibold tracking-wide text-[var(--color-ink)]">{member.oab}</p>
                   <p className="mt-2 text-sm font-medium uppercase tracking-wide text-[var(--color-accent)]">
                     {member.role}
                   </p>

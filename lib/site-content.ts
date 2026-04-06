@@ -4,37 +4,36 @@ export const site = {
   name: "Capetini e Paulo Advogados",
   shortName: "Capetini e Paulo",
   /**
-   * Logotipo: ficheiro dentro de `public/` (commit no Git).
-   * Ex.: ficheiro `public/logo.png` → caminho `/logo.png`.
-   * Se estiver noutro sítio, ajuste (ex.: `/images/logo.png`).
+   * Logotipo em `public/images/logo.png` → `/images/logo.png`.
+   * Se colocar na raiz de `public/`, use `/logo.png`.
    */
-  logoSrc: "/logo.png",
+  logoSrc: "/images/logo.png",
   tagline: "Advocacia estratégica com ética, proximidade e resultados.",
-  description: "Escritório de advocacia dedicado à defesa dos seus direitos com atendimento humanizado e técnica jurídica sólida.",
+  description:
+    "Atendimento jurídico online em todo o Brasil, com proximidade e técnica sólida. Possibilidade de reunião presencial mediante agendamento.",
   phoneDisplay: "(21) 99999-9999",
   phoneTel: "+5521999999999",
   whatsappE164: "5521999999999",
   email: "contato@pauloadv.com.br",
-  address: {
-    street: "Rua Paula Nei, 155",
-    city: "Rio de Janeiro — RJ",
-    full: "Rua Paula Nei, 155 — Rio de Janeiro, RJ",
-  },
-  mapEmbedQuery: "Rua Paula Nei, 155, Rio de Janeiro, RJ, Brasil",
+  /** Texto para rodapé e contacto (sem endereço fixo de sede). */
+  serviceAreaLine: "Atendimento online em todo o Brasil. Reuniões presenciais mediante agendamento.",
 } as const;
 
 export const teamMembers = [
   {
-    name: "Dr. Paulo",
+    name: "Paulo Cezar",
+    oab: "OAB/RJ nº 243.275",
     role: "Sócio — Direito Civil e Empresarial",
     bio: "Atuação consultiva e contenciosa com foco em soluções seguras para pessoas e negócios.",
-    image: "/images/paulo.webp",
+    image: "/images/paulo.jpg",
   },
   {
-    name: "Dr. Júlio",
+    name: "Júlio Capetini",
+    oab: "OAB/ES nº 39.735",
     role: "Sócio — Contencioso e Estratégia",
     bio: "Experiência em litígios complexos e acompanhamento próximo em todas as fases do processo.",
-    image: "/images/julio.webp",
+    /** Ficheiro em `public/images/` — renomeie para `julio.webp` quando quiser; até lá pode usar roberto.webp. */
+    image: "/images/roberto.webp",
   },
 ] as const;
 
@@ -77,18 +76,21 @@ export const specialties = [
   },
 ] as const;
 
-/** Imagens genéricas de escritório (Unsplash) — pode substituir por fotos reais do escritório. */
-export const officeGallery = [
+/** Blocos da secção “Atendimento” (substitui galeria de escritório físico). */
+export const atendimentoHighlights = [
   {
-    src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
-    alt: "Sala de reuniões moderna em escritório",
+    title: "100% digital",
+    description:
+      "Consultas e acompanhamento processual com comunicação por e-mail, telefone e videoconferência, no ritmo que o seu caso exige.",
   },
   {
-    src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80",
-    alt: "Profissionais em ambiente corporativo",
+    title: "Todo o Brasil",
+    description:
+      "Advogados com inscrição na OAB; atuamos com foco em demandas que podem ser conduzidas remotamente, com clareza e segurança.",
   },
   {
-    src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
-    alt: "Fachada de edifício comercial",
+    title: "Presencial sob agendamento",
+    description:
+      "Quando fizer sentido para o caso, é possível combinar encontro presencial — mediante marcação prévia.",
   },
 ] as const;
