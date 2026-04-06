@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { SiteLogo } from "@/components/layout/site-logo";
 import { site } from "@/lib/site-content";
 
 const nav = [
@@ -21,14 +21,7 @@ export function SiteHeader() {
             className="flex shrink-0 items-center gap-2"
             aria-label={site.name}
           >
-            <Image
-              src={site.logoSrc}
-              alt=""
-              width={220}
-              height={56}
-              className="h-9 w-auto max-w-[min(200px,55vw)] object-contain object-left sm:h-10"
-              priority
-            />
+            <SiteLogo />
           </Link>
           <a
             href={`https://wa.me/${site.whatsappE164}`}

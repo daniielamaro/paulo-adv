@@ -3,7 +3,11 @@
 export const site = {
   name: "Capetini e Paulo Advogados",
   shortName: "Capetini e Paulo",
-  /** Logotipo na pasta `public/` (ex.: `public/logo.png` → `/logo.png`). */
+  /**
+   * Logotipo: ficheiro dentro de `public/` (commit no Git).
+   * Ex.: ficheiro `public/logo.png` → caminho `/logo.png`.
+   * Se estiver noutro sítio, ajuste (ex.: `/images/logo.png`).
+   */
   logoSrc: "/logo.png",
   tagline: "Advocacia estratégica com ética, proximidade e resultados.",
   description: "Escritório de advocacia dedicado à defesa dos seus direitos com atendimento humanizado e técnica jurídica sólida.",
