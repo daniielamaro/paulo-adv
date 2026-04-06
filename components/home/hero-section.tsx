@@ -15,9 +15,6 @@ export function HeroSection() {
         aria-hidden
       />
       <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:py-32">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-hero-muted)]">
-          Advocacia
-        </p>
         <h1 className="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
           {site.tagline}
         </h1>
