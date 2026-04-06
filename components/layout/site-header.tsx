@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site-content";
 
@@ -17,9 +18,17 @@ export function SiteHeader() {
         <div className="flex h-14 items-center justify-between gap-3 sm:h-16">
           <Link
             href="/#inicio"
-            className="shrink-0 font-serif text-lg font-semibold tracking-tight text-[var(--color-ink)] sm:text-xl"
+            className="flex shrink-0 items-center gap-2"
+            aria-label={site.name}
           >
-            {site.shortName}
+            <Image
+              src={site.logoSrc}
+              alt=""
+              width={220}
+              height={56}
+              className="h-9 w-auto max-w-[min(200px,55vw)] object-contain object-left sm:h-10"
+              priority
+            />
           </Link>
           <a
             href={`https://wa.me/${site.whatsappE164}`}

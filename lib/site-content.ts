@@ -1,8 +1,10 @@
 /** Conteúdo institucional — ajuste nomes, textos e imagens conforme o escritório. */
 
 export const site = {
-  name: "Paulo Advogados",
-  shortName: "Paulo Adv",
+  name: "Capetini e Paulo Advogados",
+  shortName: "Capetini e Paulo",
+  /** Logotipo na pasta `public/` (ex.: `public/logo.png` → `/logo.png`). */
+  logoSrc: "/logo.png",
   tagline: "Advocacia estratégica com ética, proximidade e resultados.",
   description: "Escritório de advocacia dedicado à defesa dos seus direitos com atendimento humanizado e técnica jurídica sólida.",
   phoneDisplay: "(21) 99999-9999",
@@ -25,10 +27,10 @@ export const teamMembers = [
     image: "/images/paulo.webp",
   },
   {
-    name: "Dr. Roberto",
+    name: "Dr. Júlio",
     role: "Sócio — Contencioso e Estratégia",
     bio: "Experiência em litígios complexos e acompanhamento próximo em todas as fases do processo.",
-    image: "/images/roberto.webp",
+    image: "/images/julio.webp",
   },
 ] as const;
 
