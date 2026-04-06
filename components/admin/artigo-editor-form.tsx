@@ -6,6 +6,7 @@ import {
   updateArtigo,
   type ArtigoFormState,
 } from "@/app/actions/artigos";
+import { ArtigoBodyField } from "@/components/admin/artigo-body-field";
 
 const initial: ArtigoFormState = { ok: false, message: "" };
 
@@ -78,19 +79,9 @@ export function ArtigoEditorForm(props: Props) {
           className="mt-1.5 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-ink)] outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20"
         />
       </div>
-      <div>
-        <label htmlFor="body" className="block text-sm font-medium text-[var(--color-ink)]">
-          Corpo (Markdown)
-        </label>
-        <textarea
-          id="body"
-          name="body"
-          required
-          rows={18}
-          defaultValue={props.mode === "edit" ? props.initial.body : undefined}
-          className="mt-1.5 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 font-mono text-sm leading-relaxed text-[var(--color-ink)] outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20"
-        />
-      </div>
+      <ArtigoBodyField
+        initialMarkdown={props.mode === "edit" ? props.initial.body : ""}
+      />
       <div className="flex items-center gap-2">
         <input
           id="publish"
