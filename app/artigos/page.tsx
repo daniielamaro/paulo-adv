@@ -2,12 +2,31 @@ import type { Metadata } from "next";
 import { ArticleCard } from "@/components/artigos/article-card";
 import type { Article } from "@/lib/db/schema";
 import { listPublishedArticles } from "@/lib/queries/articles";
+import { defaultSocialImage, site } from "@/lib/site-content";
 
 export const dynamic = "force-dynamic";
 
+const artigosDescription =
+  "Artigos e conteúdos jurídicos da equipa Capetini e Paulo Advogados — temas relevantes para clientes e parceiros.";
+
 export const metadata: Metadata = {
   title: "Artigos",
-  description: "Artigos e conteúdos jurídicos do escritório.",
+  description: artigosDescription,
+  alternates: { canonical: "/artigos" },
+  openGraph: {
+    title: `Artigos | ${site.name}`,
+    description: artigosDescription,
+    url: "/artigos",
+    locale: "pt_BR",
+    type: "website",
+    images: [{ url: defaultSocialImage.src, alt: defaultSocialImage.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Artigos | ${site.shortName}`,
+    description: artigosDescription,
+    images: [defaultSocialImage.src],
+  },
 };
 
 export default async function ArtigosPage() {

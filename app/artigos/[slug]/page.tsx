@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleBody } from "@/components/artigos/article-body";
 import { getArticleBySlug } from "@/lib/queries/articles";
+import { defaultSocialImage } from "@/lib/site-content";
+import { getSiteUrlString } from "@/lib/site-url";
 
 export const dynamic = "force-dynamic";
 
@@ -11,14 +13,30 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
-  if (!article) return { title: "Artigo" };
+  if (!article) return { title: "Artigo", robots: { index: false, follow: false } };
+
+  const description = article.excerpt ?? article.title;
+  const base = getSiteUrlString();
+
   return {
     title: article.title,
-    description: article.excerpt ?? article.title,
+    description,
+    alternates: { canonical: `/artigos/${slug}` },
     openGraph: {
       title: article.title,
       description: article.excerpt ?? undefined,
       type: "article",
+      url: `${base}/artigos/${slug}`,
+      locale: "pt_BR",
+      publishedTime: article.publishedAt?.toISOString(),
+      modifiedTime: article.updatedAt.toISOString(),
+      images: [{ url: defaultSocialImage.src, alt: defaultSocialImage.alt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description,
+      images: [defaultSocialImage.src],
     },
   };
 }

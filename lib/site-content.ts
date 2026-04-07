@@ -36,6 +36,12 @@ export const teamMembers = [
   },
 ] as const;
 
+/** Imagem para partilhas (Open Graph / redes) — foto do Dr. Paulo; manter proporção adequada se trocar o ficheiro. */
+export const defaultSocialImage = {
+  src: teamMembers[0].image,
+  alt: `${teamMembers[0].name} — ${site.name}`,
+} as const;
+
 export const specialties = [
   {
     title: "Direito Civil",
