@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArticleBody } from "@/components/artigos/article-body";
 import { getArticleBySlug } from "@/lib/queries/articles";
 import { defaultSocialImage } from "@/lib/site-content";
-import { getSiteUrlString } from "@/lib/site-url";
+import { absoluteUrl, getSiteUrlString } from "@/lib/site-url";
 
 export const dynamic = "force-dynamic";
 
@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const description = article.excerpt ?? article.title;
   const base = getSiteUrlString();
+  const articleOgImage = absoluteUrl(defaultSocialImage.src);
 
   return {
     title: article.title,
@@ -30,13 +31,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: "pt_BR",
       publishedTime: article.publishedAt?.toISOString(),
       modifiedTime: article.updatedAt.toISOString(),
-      images: [{ url: defaultSocialImage.src, alt: defaultSocialImage.alt }],
+      images: [
+        {
+          url: articleOgImage,
+          secureUrl: articleOgImage,
+          alt: defaultSocialImage.alt,
+          type: "image/jpeg",
+          width: 1200,
+          height: 1200,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description,
-      images: [defaultSocialImage.src],
+      images: [articleOgImage],
     },
   };
 }

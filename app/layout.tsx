@@ -7,9 +7,10 @@ import { WhatsAppFloat } from "@/components/home/whatsapp-float";
 import { Providers } from "@/app/providers";
 import { JsonLd } from "@/components/seo/json-ld";
 import { defaultSocialImage, site } from "@/lib/site-content";
-import { getSiteUrlString } from "@/lib/site-url";
+import { absoluteUrl, getSiteUrlString } from "@/lib/site-url";
 
 const siteUrl = getSiteUrlString();
+const ogImageUrl = absoluteUrl(defaultSocialImage.src);
 
 const serif = Source_Serif_4({
   variable: "--font-display",
@@ -39,11 +40,15 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     type: "website",
     siteName: site.name,
-    url: "/",
+    url: `${siteUrl}/`,
     images: [
       {
-        url: defaultSocialImage.src,
+        url: ogImageUrl,
+        secureUrl: ogImageUrl,
         alt: defaultSocialImage.alt,
+        type: "image/jpeg",
+        width: 1200,
+        height: 1200,
       },
     ],
   },
@@ -51,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: site.name,
     description: site.description,
-    images: [defaultSocialImage.src],
+    images: [ogImageUrl],
   },
   robots: {
     index: true,

@@ -3,11 +3,15 @@ import { ArticleCard } from "@/components/artigos/article-card";
 import type { Article } from "@/lib/db/schema";
 import { listPublishedArticles } from "@/lib/queries/articles";
 import { defaultSocialImage, site } from "@/lib/site-content";
+import { absoluteUrl, getSiteUrlString } from "@/lib/site-url";
 
 export const dynamic = "force-dynamic";
 
 const artigosDescription =
   "Artigos e conteúdos jurídicos da equipa Capetini e Paulo Advogados — temas relevantes para clientes e parceiros.";
+
+const base = getSiteUrlString();
+const artigosOgImage = absoluteUrl(defaultSocialImage.src);
 
 export const metadata: Metadata = {
   title: "Artigos",
@@ -16,16 +20,25 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Artigos | ${site.name}`,
     description: artigosDescription,
-    url: "/artigos",
+    url: `${base}/artigos`,
     locale: "pt_BR",
     type: "website",
-    images: [{ url: defaultSocialImage.src, alt: defaultSocialImage.alt }],
+    images: [
+      {
+        url: artigosOgImage,
+        secureUrl: artigosOgImage,
+        alt: defaultSocialImage.alt,
+        type: "image/jpeg",
+        width: 1200,
+        height: 1200,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `Artigos | ${site.shortName}`,
     description: artigosDescription,
-    images: [defaultSocialImage.src],
+    images: [artigosOgImage],
   },
 };
 
