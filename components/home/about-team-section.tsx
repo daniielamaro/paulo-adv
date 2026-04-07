@@ -13,8 +13,7 @@ export function AboutTeamSection() {
             Compromisso com a sua segurança jurídica
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[var(--color-ink-muted)]">
-            No {site.name} unimos experiência em litígio e consultoria preventiva para oferecer respostas
-            claras e estratégias alinhadas aos seus objetivos — pessoais ou empresariais.
+            Advogados associados para atuar com as melhores práticas jurídicas, em prol da defesa dos interesses de nossos clientes. Foco em agilidade, estratégia e resultados.
           </p>
         </div>
         <ul className="mt-14 flex flex-col gap-16 lg:gap-20">
@@ -40,7 +39,7 @@ export function AboutTeamSection() {
                 </div>
                 <div className="w-full min-w-0 flex-1 text-center sm:text-left">
                   <h3 className="font-serif text-2xl font-semibold text-[var(--color-ink)]">{member.name}</h3>
-                  <p className="mt-2 text-sm font-semibold tracking-wide text-[var(--color-ink)]">{member.oab}</p>
+                  <p className="mt-2 text-sm font-semibold tracking-wide text-[var(--color-ink)]">Advogado | {member.oab}</p>
                   <p className="mt-2 text-sm font-medium uppercase tracking-wide text-[var(--color-accent)]">
                     {member.role}
                   </p>

@@ -21,18 +21,17 @@ export const site = {
 
 export const teamMembers = [
   {
-    name: "Paulo Cezar",
+    name: "Paulo Cesar",
     oab: "OAB/RJ nº 243.275",
-    role: "Sócio — Direito Civil e Empresarial",
+    role: "Direito Civil e Empresarial",
     bio: "Atuação consultiva e contenciosa com foco em soluções seguras para pessoas e negócios.",
     image: "/images/paulo.jpg",
   },
   {
     name: "Júlio Capetini",
     oab: "OAB/ES nº 39.735",
-    role: "Sócio — Contencioso e Estratégia",
+    role: "Contencioso e Estratégia",
     bio: "Experiência em litígios complexos e acompanhamento próximo em todas as fases do processo.",
-    /** Ficheiro em `public/images/` — renomeie para `julio.webp` quando quiser; até lá pode usar roberto.webp. */
     image: "/images/roberto.webp",
   },
 ] as const;
