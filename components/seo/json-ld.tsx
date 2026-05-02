@@ -1,4 +1,4 @@
-import { site, teamMembers } from "@/lib/site-content";
+import { site, siteMetaDescription, teamMembers } from "@/lib/site-content";
 import { getSiteUrlString } from "@/lib/site-url";
 
 /** Dados estruturados schema.org (LegalService, WebSite, advogados). */
@@ -12,7 +12,7 @@ export function JsonLd() {
       name: site.name,
       url: origin,
       image: `${origin}${site.logoSrc}`,
-      description: site.description,
+      description: siteMetaDescription,
       telephone: site.phoneTel,
       email: site.email,
       areaServed: {
@@ -25,7 +25,7 @@ export function JsonLd() {
       "@id": `${origin}/#website`,
       url: origin,
       name: site.name,
-      description: site.description,
+      description: siteMetaDescription,
       inLanguage: "pt-BR",
       publisher: { "@id": `${origin}/#legal-service` },
     },

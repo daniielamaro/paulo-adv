@@ -9,8 +9,12 @@ export const site = {
    */
   logoSrc: "/images/logo.png",
   tagline: "Advocacia estratégica, com ética e resultados.",
-  description:
-    "Resolva seu problema jurídico com agilidade e competência. Buscamos sempre os melhores resultados com estratégias adequadas ao seu caso.  Atendimento on-line para todo Brasil.",
+  /** Parágrafos exibidos no hero; para meta tags use `siteMetaDescription`. */
+  description: [
+    "Resolva seu problema jurídico com agilidade e competência.",
+    "Buscamos sempre os melhores resultados com estratégias adequadas ao seu caso.",
+    "Atendimento on-line para todo Brasil.",
+  ],
   phoneDisplay: "(21) 99999-9999",
   phoneTel: "+5521999999999",
   whatsappE164: "5521999999999",
@@ -18,6 +22,9 @@ export const site = {
   /** Texto para rodapé e contacto (sem endereço fixo de sede). */
   serviceAreaLine: "Atendimento online em todo o Brasil. Reuniões presenciais mediante agendamento.",
 } as const;
+
+/** Descrição num único texto para `<meta>`, Open Graph e JSON-LD. */
+export const siteMetaDescription = site.description.join(" ");
 
 export const teamMembers = [
   {

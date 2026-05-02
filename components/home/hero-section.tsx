@@ -18,9 +18,13 @@ export function HeroSection() {
         <h1 className="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
           {site.tagline}
         </h1>
-        <p className="mt-6 max-w-2xl text-justify text-lg leading-relaxed text-[var(--color-hero-muted)]">
-          {site.description}
-        </p>
+        <div className="mt-6 max-w-4xl space-y-2 text-lg leading-relaxed text-[var(--color-hero-muted)]">
+          {site.description.map((paragraph, i) => (
+            <p key={i} className="text-left">
+              {paragraph}
+            </p>
+          ))}
+        </div>
         <div className="mt-10 flex flex-wrap gap-4">
           <a
             href="#contato"

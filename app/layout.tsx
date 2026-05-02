@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { WhatsAppFloat } from "@/components/home/whatsapp-float";
 import { Providers } from "@/app/providers";
 import { JsonLd } from "@/components/seo/json-ld";
-import { defaultSocialImage, site } from "@/lib/site-content";
+import { defaultSocialImage, site, siteMetaDescription } from "@/lib/site-content";
 import { absoluteUrl, getSiteUrlString } from "@/lib/site-url";
 
 const siteUrl = getSiteUrlString();
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     default: `${site.name} — Advocacia`,
     template: `%s | ${site.shortName}`,
   },
-  description: site.description,
+  description: siteMetaDescription,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: site.name,
-    description: site.description,
+    description: siteMetaDescription,
     locale: "pt_BR",
     type: "website",
     siteName: site.name,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: site.name,
-    description: site.description,
+    description: siteMetaDescription,
     images: [ogImageUrl],
   },
   robots: {
