@@ -36,9 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: articleOgImage,
           secureUrl: articleOgImage,
           alt: defaultSocialImage.alt,
-          type: "image/jpeg",
-          width: 1200,
-          height: 1200,
+          type: "image/png",
         },
       ],
     },
@@ -79,7 +77,7 @@ export default async function ArtigoPage({ params }: Props) {
             {article.title}
           </h1>
           {article.excerpt ? (
-            <p className="mt-4 text-lg text-[var(--color-ink-muted)]">{article.excerpt}</p>
+            <p className="mt-4 text-justify text-lg leading-relaxed text-[var(--color-ink-muted)]">{article.excerpt}</p>
           ) : null}
         </header>
         <div className="pt-10">

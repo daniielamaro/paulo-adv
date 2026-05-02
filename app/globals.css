@@ -78,6 +78,7 @@ body {
 
 .article-md p {
   line-height: 1.7;
+  text-align: justify;
 }
 
 .article-md ul,
@@ -85,6 +86,10 @@ body {
   margin: 0.75rem 0;
   padding-left: 1.5rem;
   line-height: 1.65;
+}
+
+.article-md li {
+  text-align: justify;
 }
 
 .article-md a {
@@ -102,6 +107,7 @@ body {
   padding-left: 1rem;
   border-left: 3px solid var(--color-accent);
   color: var(--color-ink-muted);
+  text-align: justify;
 }
 
 .article-md code {

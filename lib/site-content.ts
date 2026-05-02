@@ -8,9 +8,9 @@ export const site = {
    * Se colocar na raiz de `public/`, use `/logo.png`.
    */
   logoSrc: "/images/logo.png",
-  tagline: "Advocacia estratégica com ética, proximidade e resultados.",
+  tagline: "Advocacia estratégica, com ética e resultados.",
   description:
-    "Atendimento jurídico online em todo o Brasil, com proximidade e técnica sólida. Possibilidade de reunião presencial mediante agendamento.",
+    "Resolva seu problema jurídico com agilidade e competência. Buscamos sempre os melhores resultados com estratégias adequadas ao seu caso.  Atendimento on-line para todo Brasil.",
   phoneDisplay: "(21) 99999-9999",
   phoneTel: "+5521999999999",
   whatsappE164: "5521999999999",
@@ -23,62 +23,46 @@ export const teamMembers = [
   {
     name: "Paulo Cesar",
     oab: "OAB/RJ nº 243.275",
-    role: "Direito Civil e Empresarial",
-    bio: "Atuação consultiva e contenciosa com foco em soluções seguras para pessoas e negócios.",
+    role: "Atuação no Direito público e privado",
+    bio: [
+      "Bacharel em Direito.",
+      "Pós-graduação em Direito Processual Civil e Direito Civil.",
+      "Pós-graduação em Direito Financeiro e tributário.",
+      "Pós-graduado em Direito público e privado aplicado pela ESMAGES - Escola Superior de Magistratura do ES.",
+      "Foi Residente Jurídico pelo Tribunal de Justiça do Espírito Santo.",
+      "Pós-graduando em inteligência artificial para o Direito.",
+    ],
     image: "/images/paulo.jpg",
   },
   {
     name: "Júlio Capetini",
     oab: "OAB/ES nº 39.735",
-    role: "Contencioso e Estratégia",
-    bio: "Experiência em litígios complexos e acompanhamento próximo em todas as fases do processo.",
+    role: "Atuação em diversas frentes do Direito",
+    bio: [
+      "Bacharel em direito.",
+      "Pós-graduação em direito penal e processual penal.",
+      "Atuou como Assessor de Juiz de Direito do TJES por 14 anos.",
+    ],
     image: "/images/roberto.webp",
   },
 ] as const;
 
-/** Imagem para partilhas (Open Graph / redes) — foto do Dr. Paulo; manter proporção adequada se trocar o ficheiro. */
+/** Imagem para partilhas (Open Graph / redes) — usa o logótipo do site (`site.logoSrc`). */
 export const defaultSocialImage = {
-  src: teamMembers[0].image,
-  alt: `${teamMembers[0].name} — ${site.name}`,
+  src: site.logoSrc,
+  alt: site.name,
 } as const;
 
+/** Áreas de atuação (apenas títulos — sem descrição na página). */
 export const specialties = [
-  {
-    title: "Direito Civil",
-    description:
-      "Contratos, responsabilidade civil, indenizações e relações patrimoniais com análise clara e preventiva.",
-    icon: "scale" as const,
-  },
-  {
-    title: "Direito Empresarial",
-    description:
-      "Constituição de empresas, societário, compliance e suporte jurídico para decisões do dia a dia.",
-    icon: "building" as const,
-  },
-  {
-    title: "Direito do Trabalho",
-    description:
-      "Defesa de empregadores e trabalhadores, negociações e contencioso trabalhista com foco em resultado.",
-    icon: "users" as const,
-  },
-  {
-    title: "Direito de Família e Sucessões",
-    description:
-      "Divórcios, guarda, alimentos, inventários e planejamento sucessório com sensibilidade e rigor técnico.",
-    icon: "heart" as const,
-  },
-  {
-    title: "Direito do Consumidor",
-    description:
-      "Relações de consumo, bancário e contratos de adesão; orientação e defesa em órgãos e tribunais.",
-    icon: "shield" as const,
-  },
-  {
-    title: "Consultoria preventiva",
-    description:
-      "Pareceres, revisão de documentos e estratégias para reduzir riscos antes que virem litígio.",
-    icon: "doc" as const,
-  },
+  "Direito Civil",
+  "Direito de família",
+  "Direito Previdenciário",
+  "Direito Trabalhista",
+  "Direito do Consumidor",
+  "Direito Tributário",
+  "Direito criminal",
+  "Direito Público",
 ] as const;
 
 /** Blocos da secção “Atendimento” (substitui galeria de escritório físico). */
@@ -91,7 +75,7 @@ export const atendimentoHighlights = [
   {
     title: "Todo o Brasil",
     description:
-      "Advogados com inscrição na OAB; atuamos com foco em demandas que podem ser conduzidas remotamente, com clareza e segurança.",
+      "Atuamos com foco em demandas que podem ser conduzidas remotamente, com clareza e segurança.",
   },
   {
     title: "Presencial sob agendamento",

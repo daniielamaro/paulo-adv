@@ -23,7 +23,7 @@ export function ArticleCard({ article }: Props) {
         </Link>
       </h2>
       {article.excerpt ? (
-        <p className="mt-2 line-clamp-3 text-sm text-[var(--color-ink-muted)]">{article.excerpt}</p>
+        <p className="mt-2 line-clamp-3 text-justify text-sm leading-relaxed text-[var(--color-ink-muted)]">{article.excerpt}</p>
       ) : null}
       <Link
         href={`/artigos/${article.slug}`}

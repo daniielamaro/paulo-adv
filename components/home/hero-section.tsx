@@ -18,7 +18,7 @@ export function HeroSection() {
         <h1 className="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
           {site.tagline}
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-hero-muted)]">
+        <p className="mt-6 max-w-2xl text-justify text-lg leading-relaxed text-[var(--color-hero-muted)]">
           {site.description}
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
@@ -26,7 +26,7 @@ export function HeroSection() {
             href="#contato"
             className="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-[var(--color-accent-foreground)] shadow-md transition hover:brightness-110"
           >
-            Agende uma consulta
+            Entre em contato
           </a>
           <Link
             href={`https://wa.me/${site.whatsappE164}`}

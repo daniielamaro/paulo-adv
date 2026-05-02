@@ -6,7 +6,7 @@ import { specialties } from "@/lib/site-content";
 
 const initial: ContactFormState = { ok: false, message: "" };
 
-const topicOptions = [...specialties.map((s) => s.title), "Outro"];
+const topicOptions = [...specialties, "Outro"];
 
 export function ContactForm() {
   const [state, formAction, pending] = useActionState(submitContact, initial);
@@ -91,7 +91,7 @@ export function ContactForm() {
       {state.message ? (
         <p
           role="status"
-          className={`rounded-xl px-4 py-3 text-sm ${
+          className={`text-justify rounded-xl px-4 py-3 text-sm leading-relaxed ${
             state.ok
               ? "bg-emerald-50 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-100"
               : "bg-amber-50 text-amber-950 dark:bg-amber-950/40 dark:text-amber-100"

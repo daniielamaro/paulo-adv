@@ -9,10 +9,10 @@ export function AtendimentoSection() {
             Atendimento
           </p>
           <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-4xl">
-            Online, com possibilidade presencial
+            On-line com possibilidade presencial
           </h2>
-          <p className="mt-4 text-lg text-[var(--color-ink-muted)]">
-            Não mantemos sede aberta ao público: o nosso modelo privilegia o atendimento remoto, ágil e
+          <p className="mt-4 text-justify text-lg leading-relaxed text-[var(--color-ink-muted)]">
+            Não mantemos sede aberta ao público. O nosso modelo privilegia o atendimento remoto, ágil e
             seguro. Quando o caso justificar, combinamos reunião presencial.
           </p>
         </div>
@@ -23,7 +23,7 @@ export function AtendimentoSection() {
               className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 shadow-sm"
             >
               <h3 className="font-serif text-lg font-semibold text-[var(--color-ink)]">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink-muted)]">{item.description}</p>
+              <p className="mt-3 text-justify text-sm leading-relaxed text-[var(--color-ink-muted)]">{item.description}</p>
             </li>
           ))}
         </ul>

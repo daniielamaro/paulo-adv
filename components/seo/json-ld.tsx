@@ -34,7 +34,7 @@ export function JsonLd() {
       "@id": `${origin}/#advogado-${i}`,
       name: m.name,
       jobTitle: m.role,
-      description: m.bio,
+      description: m.bio.join(" "),
       identifier: m.oab,
       memberOf: { "@id": `${origin}/#legal-service` },
     })),

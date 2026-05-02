@@ -28,9 +28,7 @@ export const metadata: Metadata = {
         url: artigosOgImage,
         secureUrl: artigosOgImage,
         alt: defaultSocialImage.alt,
-        type: "image/jpeg",
-        width: 1200,
-        height: 1200,
+        type: "image/png",
       },
     ],
   },
@@ -56,12 +54,12 @@ export default async function ArtigosPage() {
         <h1 className="font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-4xl">
           Artigos
         </h1>
-        <p className="mt-3 text-[var(--color-ink-muted)]">
+        <p className="mt-3 text-justify leading-relaxed text-[var(--color-ink-muted)]">
           Textos sobre direito e temas relevantes para clientes e parceiros.
         </p>
       </header>
       {items.length === 0 ? (
-        <p className="mt-12 text-center text-[var(--color-ink-muted)]">
+        <p className="mx-auto mt-12 max-w-md text-justify text-[var(--color-ink-muted)]">
           Ainda não há artigos publicados. Volte em breve.
         </p>
       ) : (

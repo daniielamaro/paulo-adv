@@ -12,7 +12,7 @@ export function AboutTeamSection() {
           <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-4xl">
             Compromisso com a sua segurança jurídica
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-[var(--color-ink-muted)]">
+          <p className="mt-4 text-justify text-lg leading-relaxed text-[var(--color-ink-muted)]">
             Advogados associados para atuar com as melhores práticas jurídicas, em prol da defesa dos interesses de nossos clientes. Foco em agilidade, estratégia e resultados.
           </p>
         </div>
@@ -43,9 +43,16 @@ export function AboutTeamSection() {
                   <p className="mt-2 text-sm font-medium uppercase tracking-wide text-[var(--color-accent)]">
                     {member.role}
                   </p>
-                  <p className="mx-auto mt-5 max-w-prose text-base leading-relaxed text-[var(--color-ink-muted)] sm:mx-0 sm:max-w-none">
-                    {member.bio}
-                  </p>
+                  <div className="mx-auto mt-5 max-w-prose space-y-3 sm:mx-0 sm:max-w-none">
+                    {member.bio.map((paragraph, pIndex) => (
+                      <p
+                        key={`${member.name}-${pIndex}`}
+                        className="text-justify text-base leading-relaxed text-[var(--color-ink-muted)]"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </li>
             );
